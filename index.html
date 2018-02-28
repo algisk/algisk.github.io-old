@@ -1,1 +1,392 @@
-WOW
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>index.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">R Practice</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="intro.html">Intro</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="r_practice" class="section level1">
+<h1>R_Practice</h1>
+<p>This simple exercise is designed to get you started with Rmarkdown and DNA methylation microarray data analysis. You can view the results <a href="https://algisk.github.io/R_Practice">here</a>.</p>
+<div id="prerequisites" class="section level2">
+<h2>Prerequisites</h2>
+<p>You will need <a href="https://github.com/"><strong>git</strong></a> and <a href="https://git-lfs.github.com/"><strong>git-lfs</strong></a> installed to clone the repository.</p>
+<p>Once you have them installed, type</p>
+<p><code>git config --global user.name &quot;your_username&quot;</code></p>
+<p>and</p>
+<p><code>git config --global user.email &quot;your_email&quot;</code></p>
+<p>to set Git up. Type the same commands without the last part (the text in “”) to make sure you set it correctly.</p>
+<p>You will most likely need to install some R packages, but this part is up to you to figure out yourself :) .</p>
+<p>You will also need <strong>rmarkdown</strong> and <strong>pandoc</strong>.</p>
+<p>I suggest using the development version of rmarkdown, for that you will need <strong>devtools</strong>. In R, type</p>
+<pre><code>install.packages(&quot;devtools&quot;)
+library(devtools)
+install_github(&quot;rstudio/rmarkdown&quot;)</code></pre>
+</div>
+<div id="geting-the-repository" class="section level2">
+<h2>Geting the repository</h2>
+<p>Once you have everything set up, use</p>
+<p><code>git clone git@github.com:algisk/R_Practice.git</code></p>
+<p>if you have <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/"><strong>ssh</strong></a> set up or</p>
+<p><code>git clone https://github.com/algisk/R_Practice.git</code></p>
+<p>if you want to use the HTTPS version (not recommended).</p>
+<p>This will create a folder caled “R_Practice” in your current directory.</p>
+</div>
+<div id="working-on-the-exercises" class="section level2">
+<h2>Working on the exercises</h2>
+<p>Once in the repository, create a new branch</p>
+<p><code>git checkout -b branch_name</code></p>
+<p>You can make whatever you want in this branch and once you make some changes that you are happy with, add any untracked files, commit with an informative message and push to the remote repository</p>
+<p><code>git status</code></p>
+<p>If the files you were working on are in <span style="color:red">red</span>, type</p>
+<p><code>git add filename</code></p>
+<p>If everything you need comes up <span style="color:green">green</span> once you check status, commit the changes</p>
+<p><code>git commit -m &quot;very informative message, super useful&quot;</code></p>
+<p>Finally, push everything to your new branch</p>
+<p><code>git push origin branch_name</code></p>
+</div>
+<div id="rendering-the-final-result" class="section level2">
+<h2>Rendering the final result</h2>
+<p>When you feel like your final result is good to go, add the .Rmd file to <strong>_site.yml</strong> in the same format. Let’s say you created results.Rmd, in the .yml it would look like</p>
+<pre><code>    - text: &quot;Result&quot;
+      href: result.html</code></pre>
+<p>Keep in mind that <strong>indentation is important!</strong></p>
+<p>Finally, open R and type</p>
+<p><code>rmarkdown::render_site()</code></p>
+<p>from the root project directory.</p>
+<p>If you completed everything correctly, you should end up with a folder named _site with a bunch of files. Open any of the htmls in the folder and your new results should show up as a separate tab.</p>
+</div>
+<div id="running-make" class="section level2">
+<h2>Running make</h2>
+<p>Running <em>make</em> in the project root directory will generate a folder named <strong><em>docs</em></strong> which is useful if you want to publish the results through Github Pages.</p>
+<p>If you are working on the master branch, you can also run <code>make publish</code> to automaticaly push the updated version of the website to <a href="https://algisk.github.io/R_Practice">algisk.github.io/R_Practice</a>.</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
