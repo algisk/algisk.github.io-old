@@ -2,8 +2,3 @@ theme: jekyll-theme-tactile
 title: A basic github Page
 description: More to come soon.
 exclude: ["README.md"]
-navbar:
-  title: "Menu"
-  left:
-    - text: CV
-      href: CV.md
