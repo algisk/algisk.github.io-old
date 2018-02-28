@@ -1,9 +1,10 @@
-## Welcome to my rough profile page
+---
+layout: page
+title: Homepage
+tagline: Algis Krisciunas
+description: Welcome to my homepage!
+---
 
-This will be used as a homepage of sorts
+# This is where it all begins
 
-### CV
-
-<img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAIA_wDGAAAAAQAAAAAAAA1-AAAAJDI3YjU1YWYzLTI0ZjItNDFmNy1iOTYzLWI5OGE3Zjg4YTk2Mw.jpg" width="200">
-
-This face above is me.
+Let's see how it goes!
